@@ -14,9 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @Composable
-fun SecondScreen() {
+fun SecondScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -31,13 +32,21 @@ fun SecondScreen() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            onClick = {
+                navController.navigate("last")
+            }
+        ) {
             Text(text = "Go To Last Screen")
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            onClick = {
+                navController.popBackStack()
+            }
+        ) {
             Text(text = "Go To Previous Screen")
         }
     }
@@ -45,6 +54,6 @@ fun SecondScreen() {
 
 @Composable
 @Preview(showBackground = true)
-fun SecondScreenPreview(){
-    SecondScreen()
+fun SecondScreenPreview() {
+//    SecondScreen()
 }

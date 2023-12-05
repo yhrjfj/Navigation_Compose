@@ -14,9 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -31,20 +32,18 @@ fun HomeScreen(){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            onClick = {
+                navController.navigate("second")
+            }
+        ) {
             Text(text = "Go To Second Screen")
-        }
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Button(onClick = { /*TODO*/ }) {
-            Text(text = "Go To Previous Screen")
         }
     }
 }
 
 @Composable
 @Preview(showBackground = true)
-fun HomeScreenPreview(){
-    HomeScreen()
+fun HomeScreenPreview() {
+//    HomeScreen()
 }

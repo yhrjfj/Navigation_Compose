@@ -30,16 +30,16 @@ class MainActivity : ComponentActivity() {
                     NavHost(
                         navController = navController,
                         startDestination = "home"
-                    ){
-                        composable("home"){
+                    ) {
+                        composable("home") {
                             HomeScreen(navController)
                         }
 
-                        composable("second"){
+                        composable("second") {
                             SecondScreen(navController)
                         }
 
-                        composable("last"){
+                        composable("last") {
                             LastScreen(navController)
                         }
                     }
