@@ -34,7 +34,7 @@ fun SecondScreen(navController: NavHostController) {
 
         Button(
             onClick = {
-                navController.navigate("last")
+                navController.navigate(Screen.LastScreen.route)
             }
         ) {
             Text(text = "Go To Last Screen")

@@ -34,7 +34,7 @@ fun HomeScreen(navController: NavHostController) {
 
         Button(
             onClick = {
-                navController.navigate("second")
+                navController.navigate(Screen.SecondScreen.route)
             }
         ) {
             Text(text = "Go To Second Screen")

@@ -29,17 +29,17 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = "home"
+                        startDestination = Screen.Home.route
                     ) {
-                        composable("home") {
+                        composable(Screen.Home.route) {
                             HomeScreen(navController)
                         }
 
-                        composable("second") {
+                        composable(Screen.SecondScreen.route) {
                             SecondScreen(navController)
                         }
 
-                        composable("last") {
+                        composable(Screen.LastScreen.route) {
                             LastScreen(navController)
                         }
                     }

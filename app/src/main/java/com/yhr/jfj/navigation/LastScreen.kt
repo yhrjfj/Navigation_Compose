@@ -33,7 +33,7 @@ fun LastScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
-            navController.navigate("home")
+            navController.navigate(Screen.Home.route)
         }) {
             Text(text = "Go To Home Screen")
         }
