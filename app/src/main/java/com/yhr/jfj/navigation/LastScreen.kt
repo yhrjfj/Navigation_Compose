@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun LastScreen(){
@@ -23,6 +24,13 @@ fun LastScreen(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Text(
+            text = "Last Screen",
+            fontSize = 30.sp
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
         Button(onClick = { /*TODO*/ }) {
             Text(text = "Go To Home Screen")
         }
