@@ -2,11 +2,17 @@ package com.yhr.jfj.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+import androidx.compose.material.icons.rounded.KeyboardArrowRight
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -32,22 +38,32 @@ fun SecondScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(
-            onClick = {
-                navController.navigate(Screen.LastScreen.route)
-            }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(50.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = "Go To Last Screen")
-        }
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Button(
-            onClick = {
-                navController.popBackStack()
+            Button(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.KeyboardArrowLeft,
+                    contentDescription = "Left"
+                )
             }
-        ) {
-            Text(text = "Go To Previous Screen")
+            Button(
+                onClick = {
+                    navController.navigate(Screen.LastScreen.route)
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.KeyboardArrowRight,
+                    contentDescription = "Right"
+                )
+            }
         }
     }
 }

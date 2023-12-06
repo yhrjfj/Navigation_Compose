@@ -2,11 +2,16 @@ package com.yhr.jfj.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.KeyboardArrowRight
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -32,12 +37,22 @@ fun HomeScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(
-            onClick = {
-                navController.navigate(Screen.SecondScreen.route)
-            }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(50.dp),
+            horizontalArrangement = Arrangement.Center
         ) {
-            Text(text = "Go To Second Screen")
+            Button(
+                onClick = {
+                    navController.navigate(Screen.SecondScreen.route)
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.KeyboardArrowRight,
+                    contentDescription = "Right"
+                )
+            }
         }
     }
 }
